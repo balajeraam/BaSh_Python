@@ -1,4 +1,4 @@
-# This program captures details of time at which ISS passes over an address
+# This program captures details of time (local) at which ISS passes over an address
 # 2 APIs used 
 # -- Finding GPS coordinates from address : Opencage API 
 # -- Finding ISS fly by time over coordinates -- Open Notify API
@@ -16,21 +16,22 @@ results = geocoder.geocode(query)
 
 la = results[0]['geometry']['lat']
 lo = results[0]['geometry']['lng']
+ofs = results[0]['annotations']['timezone']['offset_sec']
 
 sla = str(la)
 slo = str(lo)
-print ("Your latitude :  ",sla)
-print ( "Your longitude : ",slo)
+print ("Location latitude :  ",sla)
+print ("Location longitude:  ",slo)
 
-# This program captures details of time at which Internation Space Station (ISS) passes over your city. 
-# It uses an "Keyless" API. Since no key is involved, it helps beginners to understand mechanics of API
 
-# Credits : https://www.dataquest.io/blog/python-api-tutorial/
+
+
+# Credits for ISS Pass time retrieval --  https://www.dataquest.io/blog/python-api-tutorial/
 
 # import "requests" module through pip install request prior to the code
 import requests
 import json
-from datetime import datetime
+from datetime import datetime , timedelta
 
 
 def jprint(obj):
@@ -59,12 +60,15 @@ for d in pass_times:
     time = d['risetime']
     risetimes.append(time)
 
-# command << print(risetimes) >> will show a "epoch" time. This will be converted into normal time.
+# command << print(risetimes) >> will show a "epoch" UTC time. This needs conversion to local time. 
+# Dataquest.io article shows date in UTC. In this program we have additionally converted them to local time.
+# UTC to local time conversion is done by retrieving local time offset from opencage API response and using timedelta function in python datetime module
 
+ltimes = []
 
-times = []
-
+print(" International Space Station (ISS) will pass over the location at (Local time) : ")
 for rt in risetimes:
     time = datetime.fromtimestamp(rt)
-    times.append(time)
-    print(time)
+    ltime = time + timedelta(seconds= ofs)
+    ltimes.append(ltime)
+    print(ltime)
