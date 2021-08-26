@@ -18,7 +18,7 @@ file_path = f"Your path_{this_moment}.png"
 #Active internet connection is required to execute the following step.
 #RGB values decide the ink color of final handwritten message.
 #Adding a '\n' to the message gives the same effect of pressing the RETURN KEY in keyboard.
-pkit.text_to_handwriting("Dear receiver\nThis handwriting message was created using Python.\nSent from a computer using Python\nby\nsender",save_to=file_path,rgb=(120,20,10))
+pkit.text_to_handwriting("Dear receiver\nThis hand written message was created using Python.\nSent from a computer using Python\nby\nsender",save_to=file_path,rgb=(120,20,10))
 
 #Introducing a delay to ensure there is enough time given for file generation in previous step
 time.sleep(20)
