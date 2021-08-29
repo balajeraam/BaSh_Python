@@ -23,9 +23,6 @@ slo = str(lo)
 print ("Location latitude :  ",sla)
 print ("Location longitude:  ",slo)
 
-
-
-
 # Credits for ISS Pass time retrieval --  https://www.dataquest.io/blog/python-api-tutorial/
 
 # import "requests" module through pip install request prior to the code
@@ -49,7 +46,6 @@ response = requests.get("http://api.open-notify.org/iss-pass.json?lat="+ sla + "
 # Typing the command << jprint(response.json()) >> will result in a response that has 3 components.
 # i.e message status, request and response details
 
-
 pass_times = response.json()['response']
 # We are trying to ignore the request status and request details. Hence giving the Key field response
 
@@ -61,7 +57,7 @@ for d in pass_times:
     risetimes.append(time)
 
 # command << print(risetimes) >> will show a "epoch" UTC time. This needs conversion to local time. 
-# Dataquest.io article shows date in UTC. In this program we have additionally converted them to local time.
+# Dataquest.io article shows date in UTC. In this program we have additionally converted UTC to local time using offset time retrieved from OpenCage API
 # UTC to local time conversion is done by retrieving local time offset from opencage API response and using timedelta function in python datetime module
 
 ltimes = []
