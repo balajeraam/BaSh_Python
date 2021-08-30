@@ -32,7 +32,7 @@ summary_file.close()
 # Decide if it is necessary in your case and adjust the time based on the scenario
 time.sleep(10)
 
-# Writing the header row in the summary excel file
+# Writing the header row in the summary csv file
 summary_file_header = ['File_Name','Extension']
 with open(summary_file_path, 'w', encoding='UTF8',newline='') as f:
     writer = csv.writer(f)
