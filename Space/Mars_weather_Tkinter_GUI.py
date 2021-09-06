@@ -3,16 +3,18 @@ import tkinter as tk
 import requests
 import json
 
+# Keyless API to source weather information from curiosity rover
 response = requests.get("https://api.maas2.apollorion.com").json()
 sol = response['sol']
 day = int(sol * (3299/3212))
 
+# Tkinter output window design
 win = Tk()
 win.title("Mars Weather Forecast")
 win.geometry("400x350")
 win.config(bg='grey')
 
-
+# Create a reusable label creation and pack template for a given text
 def LabelTemplate(texte):
     label_name = Label(win,text=texte,font=("calibri",12,"bold"),bg="grey",foreground="white")
     label_name.pack(anchor = W)
@@ -48,5 +50,8 @@ LabelTemplate(texte=sunrise)
 
 sunset = ">> Sunset at           : " + str(response['sunset'])
 LabelTemplate(texte=sunset)
+
+# Output window will close automatically after 30 seconds.
+win.after(30000,win.destroy)
 
 win.mainloop()
