@@ -11,6 +11,14 @@ Step 2 - Create a windows batch file that links where python.exe is stored in th
 - Additional info - "exit 0" will ensure once the the python program is executed, windows command prompt will close automatically. 
 - Additional info - if "pause" is used in place of "exit 0", after the program gets executed, command prompt needs manual closure.
 
-Step 3 - Create a task in Windows task scheduler and provide batch file as input. For further details, please refer to the attached word document.
-
-Step 4 - Provide criteria in the task scheduler e.g. when to start , what frequency, conditions like should the user be logged in ? etc          
+Step 3 - Create a task in Windows task scheduler to run the batch file.Detailed steps are as follows :
+- Open Task Schedule
+-	Select Create Task
+-	Provide a Name for the task 
+-	Select Run only when user is logged on  
+-	Create new Trigger
+-	Select the start time for reminder, run daily and repeat every 1 hour. “Indefinitely” to be selected for “For a duration of” 
+-	Under the Action tab, select new action 
+-	In the Action type, select “Start a new program”
+-	Browse and choose the file path for the Batch file that links python.exe to python reminder file
+-	Create additional conditions if required e.g. should it run when computer is running on battery, on a preferred network etc
