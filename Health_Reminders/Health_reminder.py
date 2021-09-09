@@ -4,6 +4,7 @@ import tkinter as tk
 #Create a class that will generate new tkinter window with message for a given text
 def Reminder(reminder_text):
     app_window = tk.Tk()
+    app_window.title("Health Reminder")
     # The bell method will adds a bell sound
     app_window.bell()
     # Text given inside the class will be converted into a label in this section
