@@ -3,6 +3,7 @@ Step 1 - Create the python file that can generate reminders.
 Step 2 - Create a windows batch file that links where python.exe is stored in the system to actual python file. 
 - Open notepad.
 - Copy the content from batch file template.
+- Type python.exe on the search bar in windows. This will open up a dialog box. On the header path where this file is stored will appear.
 - Replace A with path where python.exe is stored in your computer.
 - Replace B with path where the reminder python file is saved.
 - save the note pad with filename and .bat extension.
