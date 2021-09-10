@@ -16,7 +16,7 @@ win.config(bg='grey')
 #Replace <<File path>> with actual file path
 #Additional argument 0 ensures the soundfile is played in background when other parts of code are executed 
 #If Zero argument is not used , python file is play the sound component first and then initiates the content display 
-playsound.playsound("C:/Users/balaj/Downloads/PinkPanther30.wav",0)
+playsound.playsound("<<File path>>",0)
 
 
 def LabelTemplate(texte):
