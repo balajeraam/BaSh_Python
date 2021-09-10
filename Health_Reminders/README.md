@@ -1,4 +1,9 @@
-Step 1 - Create the python file that can generate reminders. 
+This project handles steps required to trigger automated health reminders on a Windows system.
+
+Step 1 - Create the python file that generates reminders. Tkinter module takes care of the following aspects:
+- Pop up of window containing reminders
+- Bell sound when the message window pops up
+- Automatic closure of window after certain time e.g.10 seconds.
 
 Step 2 - Create a windows batch file that links where python.exe is stored in the system to actual python file. 
 - Open notepad.
