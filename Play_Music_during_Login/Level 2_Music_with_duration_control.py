@@ -1,4 +1,4 @@
-# Please refer to the README.MD file for detailed explanation of code
+# Please refer to the README.MD file for detailed explanation of code and implementation approach
 # import relevant python modules
 import playsound
 import time
