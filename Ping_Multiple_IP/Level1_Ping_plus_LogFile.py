@@ -4,6 +4,7 @@ import time
 import datetime
 import subprocess
 import platform
+import os
 
 # Requesting user to provide the path where XLSX file containing server ip list is stored
 path = input("Enter path where .XLSX containing server list is stored  >> ")
