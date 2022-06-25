@@ -7,23 +7,21 @@
 	</head>
 	
 	<body>
-		<h1>GPD Right Print Result</h1>
+		<h1>Random Residents</h1>
 
         <hr>
 		
-		<h3>Selected Indicator : {{id_ind}}</h3>
-        <h3>Presentation code  : {{id_pcode}}</h3>
-        <h3>Pack Level         : {{id_plevel}}</h3>
-        <h3>Despatching Site   : {{id_site}}</h3>
-		
+		<h3>Country : {{id_country}}</h3>
+        <h3>City    : {{id_city}}</h3>		
 		<hr/>
-	
-        <img src="{{ url_for('static', path='images/BaselSBB.JPG') }}" >
+		
+		<h1>First city image</h1>
+        <img src="http://127.0.0.1:8000/static/images/{{image_file1}}" >
 		<hr>
 
-		<h1>Second Image{{image_filename}}</h1>
+		<h1>Second city image</h1>
 		
-		<img src="http://127.0.0.1:8000/static/images/{{image_filename}}">
+		<img src="http://127.0.0.1:8000/static/images/{{image_file2}}">
 	
 		
 	</body>
