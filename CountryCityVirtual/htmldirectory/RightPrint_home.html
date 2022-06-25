@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{url_for('static',path='/styles.css')}}">
+</head>
+<body>
+    
+    <h2>Resident Location</h2>
+    <form method="POST">
+        
+        <label for="country">Country:</label>
+        <input type="text" name ="country" id="country">
+        <br>
+        <p></p>
+        <label for="city">City:</label>
+        <input type="text" name ="city" id="city">
+        <br>
+        <p></p>
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Output Page</title>
+		<link rel="stylesheet" href="{{url_for('static',path='/styles.css')}}">
+
+	</head>
+	
+	<body>
+		<h1>Random Residents</h1>
+
+        <hr>
+		
+		<h3>Country : {{id_country}}</h3>
+        <h3>City    : {{id_city}}</h3>		
+		<hr/>
+		
+		<h1>First city image</h1>
+        <img src="http://127.0.0.1:8000/static/images/{{image_file1}}" >
+		<hr>
+
+		<h1>Second city image</h1>
+		
+		<img src="http://127.0.0.1:8000/static/images/{{image_file2}}">
+	
+		
+	</body>
+</html>
