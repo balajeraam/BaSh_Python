@@ -29,7 +29,7 @@
 
 		<h1>Second city image localhost http</h1>
 		
-		<img src="http://localhost:8000/static/images/{{image_file2}}">
+		<img src="http://localhost:8000/static/images/image_file2">
 
 		<h1>First city image localhost https</h1>
         <img src="https://localhost:8000/static/images/{{image_file1}}" >
@@ -37,12 +37,14 @@
 
 		<h1>Second city image localhost https</h1>
 		
-		<img src="https://localhost:8000/static/images/{{image_file2}}">
+		<img src="https://localhost:8000/static/images/image_file2">
 
-		<h1>different url loading</h1>
-        <img src="{{url_for('static', filename='MD.png')}}">
+		<h1>direct image under static</h1>
+        <img src="{{url_for('static', path='/swissflag.jpg')}}">
 		<hr>
 
+		<h1>you uploaded 1 {{ image_file3 }}<h1>
+		<a href="{{ url_for('static', path=image_file3) }}">Click to see magic happen</a>
 		
 	</body>
 </html>

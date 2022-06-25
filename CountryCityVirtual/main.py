@@ -31,7 +31,10 @@ async def handle_form(request: Request, country: str = Form(...), city: str = Fo
         image_file1 ="BaselSBB.JPG"
         image_file2 ="MB.PNG"
     
-    return templates.TemplateResponse("RightPrint_output.html",{"request": request , "id_country":country, "id_city":city, "image_file1": image_file1, "image_file2": image_file2}) 
+    image_file3 = "swissflag.jpg"
+
+    
+    return templates.TemplateResponse("RightPrint_output.html",{"request": request , "id_country":country, "id_city":city, "image_file1": image_file1, "image_file2": image_file2, "image_file3":image_file3}) 
     
 
 
