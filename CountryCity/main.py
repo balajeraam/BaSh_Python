@@ -14,17 +14,24 @@ async def hello_world():
     return {"message": "Hello World"}
 
 
-@app.get("/rp",response_class=HTMLResponse)
+@app.get("/rr",response_class=HTMLResponse)
 async def read(request: Request):
     
     return templates.TemplateResponse("RightPrint_home.html",{"request": request})
 
-@app.post("/rp",response_class= HTMLResponse)
-async def handle_form(request: Request, indicator: str = Form(...), presentationcode: str = Form(...), packlevel: str = Form(...), sitecode: str=Form(...) ):
-   
-    image_filename ="MB.PNG"
+@app.post("/rr",response_class= HTMLResponse)
+async def handle_form(request: Request, country: str = Form(...), city: str = Form(...)):
+    if country == "USA".lower():
+        image_file1 = "Arkansas1.JPG"
+        image_file2 = "Arkansas2.JPG"
+    elif country == "India".lower():
+        image_file1 = "Trichy1.JPG"
+        image_file2 = "Trichy2.JPG"
+    else:
+        image_file1 ="BaselSBB.JPG"
+        image_file2 ="MB.PNG"
     
-    return templates.TemplateResponse("RightPrint_output.html",{"request": request , "id_ind":indicator, "id_pcode":presentationcode, "id_plevel":packlevel, "id_site": sitecode , "image_filename": image_filename})
+    return templates.TemplateResponse("RightPrint_output.html",{"request": request , "id_country":country, "id_city":city, "image_file1": image_file1, "image_file2": image_file2})
     
 
 
