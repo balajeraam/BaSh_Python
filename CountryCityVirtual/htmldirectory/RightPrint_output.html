@@ -22,6 +22,12 @@
 		<h1>Second city image</h1>
 		
 		<img src="http://127.0.0.1:8000/static/images/{{image_file2}}">
+
+		<h3>First with URL</h3>
+		<img src="{{url_for('static',path='/images/{{image_file1}}')}}" >
+
+		<h3>Second with URL</h3>
+		<img src= "{{url_for('static',path='/images/{{image_file2}}')}}">
 	
 		
 	</body>
