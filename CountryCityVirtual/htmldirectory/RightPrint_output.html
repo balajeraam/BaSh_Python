@@ -7,7 +7,7 @@
 	</head>
 	
 	<body>
-		<h1>Random Residents</h1>
+		<h1>City & Residents</h1>
 
         <hr>
 		
@@ -16,39 +16,16 @@
 		<hr/>
 		
 		<h1>First city image</h1>
-        <img src="http://127.0.0.1:8000/static/images/{{image_file1}}" >
+
+		<img src="{{ url_for('static', path='images/'+image_file1 ) }}"/>
+        
 		<hr>
 
 		<h1>Second city image</h1>
-		
-		<img src="http://127.0.0.1:8000/static/images/{{image_file2}}">
-
-		<h1>First city image localhost http</h1>
-        <img src="http://localhost:8000/static/images/{{image_file1}}" >
-		<hr>
-
-		<h1>Second city image localhost http</h1>
-		
-		<img src="http://localhost:8000/static/images/image_file2">
-
-		<h1>First city image localhost https</h1>
-        <img src="https://localhost:8000/static/images/{{image_file1}}" >
-		<hr>
-
-		<h1>Second city image localhost https</h1>
-		
-		<img src="https://localhost:8000/static/images/image_file2">
-
-		<h1>direct image under static</h1>
-        <img src="{{url_for('static', path='/swissflag.jpg')}}">
-		<hr>
-
-		<h1>you uploaded 1 {{ image_file3 }}<h1>
-		<a href="{{ url_for('static', path=image_file3) }}">Click to see magic happen</a>
-		<hr>
-
 		<img src="{{ url_for('static', path='images/'+image_file2 ) }}"/>
+		
 		<hr>
+
 	
 	</body>
 </html>
